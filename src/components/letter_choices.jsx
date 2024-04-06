@@ -11,6 +11,7 @@ const LetterChoices = (props) => {
             setImgSRC((prevSrc) => ({ ...prevSrc, [letter]: CorrectImg }));
         } else {
             setImgSRC((prevSrc) => ({ ...prevSrc, [letter]: WrongImg }));
+            props.setStage(props.stage + 1);
         }
     }
 

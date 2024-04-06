@@ -19,25 +19,34 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 7rem;
   font-family: RightChalk;
   font-weight: lighter;
-  opacity: 0.8;
 }
 
 .letter-choices {
-  width: 60%;
+  width: 80%;
 
   & button {
     font-family: RightChalk;
-    font-size: 3rem;
+    font-size: 5rem;
     border: none;
     color: white;
     background: none;
   }
 
   & img {
-    width: 5rem;
-    height: 5rem;
+    width: 7rem;
+    height: 7rem;
   }
+}
+
+.word {
+  font-family: Chalkiez;
+  font-size: 8rem;
+}
+
+.stage {
+  aspect-ratio: 1/1;
+  height: 70vh;
 }
