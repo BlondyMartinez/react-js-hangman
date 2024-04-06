@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: Chalk;
+  src: url(../assets/fonts/Chalk-Regular.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: Chalkiez;
+  src: url(../assets/fonts/Chalkiez-Regular.ttf);
+}
+
+@font-face {
+  font-family: RightChalk;
+  src: url(../assets/fonts/RightChalk.ttf);
+}
+
+body {
+  background-image: url(../assets/images/6_Blackboard\ texture-seamless.jpg);
+  color: white;
+}
+
+h1 {
+  font-size: 5rem;
+  font-family: RightChalk;
+  font-weight: lighter;
+  opacity: 0.8;
+}
+
+.letter-choices {
+  width: 60%;
+}
+
+.letter-choices button {
+  font-family: RightChalk;
+  font-size: 3rem;
+  border: none;
+  background: none;
+  color: white;
 }
