@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 class SecretWord {
     constructor() {
         this.words = [];
@@ -8,12 +5,17 @@ class SecretWord {
     }
 
     initialize() {
-        const wordsFilePath = path.join(__dirname, '..', 'data', 'words.txt');
-        const wordsData = fs.readFileSync(wordsFilePath, 'utf8');
-        const words = wordsData.split('\n');
-        
-        this.words = words.filter(word => word.length >= 5 && word.length <= 12);
-        this.randomWord = this.getRandomWord();
+        try {
+            const response = fetch('./data/words.txt');
+            const text = response.text();
+            const words = text.split('\n');
+            
+            this.words = words.filter(word => word.length >= 5 && word.length <= 12);
+            this.randomWord = this.getRandomWord();
+            console.log(typeof this.randomWord, this.randomWord)
+        } catch (error) {
+            console.error('Error fetching the file:', error);
+        }
     }
 
     getRandomWord() {
@@ -31,4 +33,12 @@ class SecretWord {
     is(word) {
         return word == this.randomWord;
     }
+
+    display(correctLetters) {
+        const displayArray = [];
+        for (const char of this.randomWord) displayArray.push(correctLetters.includes(char) ? char : '_');
+        return displayArray.join(' ');
+    }
 }
+
+module.exports = SecretWord;
