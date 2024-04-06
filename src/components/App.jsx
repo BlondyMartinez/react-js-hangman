@@ -4,9 +4,21 @@ import Word from "./word"
 import SecretWord from "../js/secret_word.js"
 
 function App() {
-  const [word, setWord] = useState(new SecretWord());
+  const [word, setWord] = useState(null);
+
+  useEffect(() => {
+    const initializeWord = async () => {
+      const secretWord = new SecretWord();
+      await secretWord.initialize(); // Wait for initialization to complete
+      setWord(secretWord);
+    };
+
+    initializeWord();
+  }, []);
+
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
+
 
   return (
     <div>

@@ -4,15 +4,14 @@ class SecretWord {
         this.initialize();
     }
 
-    initialize() {
+    async initialize() {
         try {
-            const response = fetch('./data/words.txt');
-            const text = response.text();
+            const response = await fetch('./data/words.txt');
+            const text = await response.text();
             const words = text.split('\n');
             
             this.words = words.filter(word => word.length >= 5 && word.length <= 12);
             this.randomWord = this.getRandomWord();
-            console.log(typeof this.randomWord, this.randomWord)
         } catch (error) {
             console.error('Error fetching the file:', error);
         }
@@ -36,8 +35,8 @@ class SecretWord {
 
     display(correctLetters) {
         const displayArray = [];
-        for (const char of this.randomWord) displayArray.push(correctLetters.includes(char) ? char : '_');
-        return displayArray.join(' ');
+        for (let i = 0; i < this.randomWord.length; i++) displayArray.push(correctLetters.includes(this.randomWord[i]) ? this.randomWord[i] : '_');
+        return displayArray;
     }
 }
 
