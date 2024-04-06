@@ -26,6 +26,7 @@ class SecretWord {
     // utility
 
     containsLetter(letter) {
+        console.log(letter, this.randomWord, this.randomWord.includes(letter) )
         return this.randomWord.includes(letter);
     }
 

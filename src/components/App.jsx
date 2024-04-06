@@ -24,7 +24,7 @@ function App() {
     <div>
       <h1>HANGMAN</h1>
       {word && <Word word={word.display(correctLetters)} />}
-      <LetterChoices />
+      {word && <LetterChoices word={word} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters} />}
     </div>
   );
 }
