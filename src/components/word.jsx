@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import Letter from "./word_letter"
+import React from "react";
 
 const Word = ({ word }) => {
     return (
         <div>
             {word.map((letter, index) => (
                 <React.Fragment key={index}>
-                    <Letter letter={letter} />
+                    <span>{letter}</span>
                 </React.Fragment>
             ))}
         </div>
