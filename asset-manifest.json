@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-js-hangman/static/css/main.b39248c1.css",
-    "main.js": "/react-js-hangman/static/js/main.2cb64e95.js",
+    "main.js": "/react-js-hangman/static/js/main.8bea1139.js",
     "static/media/6_Blackboard texture-seamless.jpg": "/react-js-hangman/static/media/6_Blackboard texture-seamless.e6fb1dd7c2f578282bd6.jpg",
     "static/media/RightChalk.ttf": "/react-js-hangman/static/media/RightChalk.3ad750da8af5fe440e8f.ttf",
     "static/media/sound_on.png": "/react-js-hangman/static/media/sound_on.6101c2e5f38a368004dc.png",
@@ -23,10 +23,10 @@
     "static/media/chalk.mp3": "/react-js-hangman/static/media/chalk.1e95a64ba8b271592326.mp3",
     "index.html": "/react-js-hangman/index.html",
     "main.b39248c1.css.map": "/react-js-hangman/static/css/main.b39248c1.css.map",
-    "main.2cb64e95.js.map": "/react-js-hangman/static/js/main.2cb64e95.js.map"
+    "main.8bea1139.js.map": "/react-js-hangman/static/js/main.8bea1139.js.map"
   },
   "entrypoints": [
     "static/css/main.b39248c1.css",
-    "static/js/main.2cb64e95.js"
+    "static/js/main.8bea1139.js"
   ]
 }
