@@ -77,7 +77,8 @@ h1 {
   font-size: 2rem;
 }
 
-.restart {
+.restart,
+.sound {
   background: none;
   border: none;
 

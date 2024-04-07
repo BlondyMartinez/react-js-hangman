@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
 import ConfettiExplosion from 'react-confetti-explosion';
+import { Howl } from 'howler';
+// components
 import LetterChoices from "./letter_choices";
 import Word from "./word"
 import Title from "./title"
-import SecretWord from "../js/secret_word.js"
-import RestartIMG from "../assets/restart.png"
-import Stage_0 from "../assets/stages/stage_0.png"
-import Stage_1 from "../assets/stages/stage_1.png"
-import Stage_2 from "../assets/stages/stage_2.png"
-import Stage_3 from "../assets/stages/stage_3.png"
-import Stage_4 from "../assets/stages/stage_4.png"
-import Stage_5 from "../assets/stages/stage_5.png"
-import Stage_6 from "../assets/stages/stage_6.png"
+import SoundController from "./sound_controller";
+// classes
+import SecretWord from "../js/secret_word.js";
+// images
+import RestartIMG from "../assets/restart.png";
+import Stage_0 from "../assets/stages/stage_0.png";
+import Stage_1 from "../assets/stages/stage_1.png";
+import Stage_2 from "../assets/stages/stage_2.png";
+import Stage_3 from "../assets/stages/stage_3.png";
+import Stage_4 from "../assets/stages/stage_4.png";
+import Stage_5 from "../assets/stages/stage_5.png";
+import Stage_6 from "../assets/stages/stage_6.png";
+// sounds
+import WinSound from "../assets/sound/win.mp3";
+import LossSound from "../assets/sound/loss.mp3";
 
 function App() {
   const [word, setWord] = useState(null);
@@ -20,6 +28,7 @@ function App() {
   const [win, setWin] = useState(false);
   const [loss, setLoss] = useState(false);
   const [stage, setStage] = useState(0);
+  const [sound, setSound] = useState('on');
 
   const STAGE = {
     0: Stage_0,
@@ -31,12 +40,26 @@ function App() {
     6: Stage_6
   }
 
+  const winSound = new Howl({
+    src: [WinSound]
+  });
+
+  const lossSound = new Howl({
+    src: [LossSound]
+  });
+
   function checkForWin() {
-    if (word && word.isGuessCorrect(word.display(correctLetters))) setWin(true);
+    if (word && word.isGuessCorrect(word.display(correctLetters))) {
+      setWin(true);
+      if(sound == "on") winSound.play();
+    }
   }
 
   function checkForLoss() {
-    if (stage == 6) setLoss(true);
+    if (stage == 6) {
+      setLoss(true);
+      if(sound == "on") lossSound.play();
+    }
   }
 
   useEffect(() => {
@@ -84,8 +107,12 @@ function App() {
             setStage={setStage} 
             win={win}
             loss={loss}
+            sound={sound}
           />}
-          <button onClick={handleRestart} className="btn restart"><img src={RestartIMG} /></button>
+          <div className="d-flex">
+            <button onClick={handleRestart} className="btn restart"><img src={RestartIMG} /></button>
+            <SoundController sound={sound} setSound={setSound} />
+          </div>
         </div>
       </div>
       <a href="https://www.linkedin.com/in/blondy-martinez/" target="_blank" className="fixed-bottom p-4 text-center footer">By Blondy Martinez</a>
