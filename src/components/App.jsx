@@ -40,12 +40,28 @@ function App() {
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center mt-5">
-      <h1>HANGMAN</h1>
+      <h1>
+        <span>H</span>
+        <span>A</span>
+        <span>N</span>
+        <span>G</span>
+        <span>M</span>
+        <span>A</span>
+        <span>N</span>
+      </h1>
       <div className="d-flex" style={{ width: "80vw" }}>
         <img className="stage" src={stageSRC[stage]} />
         <div className="d-flex flex-column gap-3 justify-content-around align-items-center w-100">
           {word && <Word word={word.display(correctLetters)} />}
-          {word && <LetterChoices word={word} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters} stage={stage} setStage={setStage} />}
+          {word && <LetterChoices 
+            word={word} 
+            correctLetters={correctLetters} 
+            setCorrectLetters={setCorrectLetters} 
+            wrongLetters={wrongLetters} 
+            setWrongLetters={setWrongLetters} 
+            stage={stage} 
+            setStage={setStage} 
+          />}
         </div>
       </div>
     </div>

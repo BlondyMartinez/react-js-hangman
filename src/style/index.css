@@ -22,6 +22,22 @@ h1 {
   font-size: 7rem;
   font-family: RightChalk;
   font-weight: lighter;
+
+  & span:nth-child(10n + 7),
+  & span:nth-child(10n + 1){
+    color: rgb(255, 193, 193);
+  }
+  & span:nth-child(10n + 6),
+  & span:nth-child(10n + 2){
+    color: rgb(253, 255, 198);
+  }
+  & span:nth-child(10n + 5),
+  & span:nth-child(10n + 3){
+    color: rgb(191, 255, 178);
+  }
+  & span:nth-child(10n + 4){
+    color: rgb(190, 254, 255);
+  }
 }
 
 .letter-choices {
