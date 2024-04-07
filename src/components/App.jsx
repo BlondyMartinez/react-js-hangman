@@ -93,29 +93,31 @@ function App() {
     <div className="d-flex flex-column justify-content-center align-items-center mt-5">
       <Title />
       {win && <ConfettiExplosion force={0.8} duration={3000} particleCount={250} width={1600} />}
-      <div className="d-flex" style={{ width: "80vw" }}>
-        <img className="stage" src={STAGE[stage]} />
-        <div className="d-flex flex-column gap-3 justify-content-around align-items-center w-100">
-          {word && <Word word={word.display(correctLetters)} />}
-          {word && <LetterChoices 
-            word={word} 
-            correctLetters={correctLetters} 
-            setCorrectLetters={setCorrectLetters} 
-            letterFeedback={letterFeedback}
-            setLetterFeedback={setLetterFeedback}
-            stage={stage} 
-            setStage={setStage} 
-            win={win}
-            loss={loss}
-            sound={sound}
-          />}
-          <div className="d-flex">
-            <button onClick={handleRestart} className="btn restart"><img src={RestartIMG} /></button>
-            <SoundController sound={sound} setSound={setSound} />
+      <div className="container-fluid">
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-4 col-md-10 col-sm-10 d-flex justify-content-center align-items-center"><img className="stage" src={STAGE[stage]} /></div>
+          <div className="col-lg-4 col-md-10 col-sm-10 d-flex flex-column gap-3 justify-content-around align-items-center">
+            {word && <Word word={word.display(correctLetters)} />}
+            {word && <LetterChoices 
+              word={word} 
+              correctLetters={correctLetters} 
+              setCorrectLetters={setCorrectLetters} 
+              letterFeedback={letterFeedback}
+              setLetterFeedback={setLetterFeedback}
+              stage={stage} 
+              setStage={setStage} 
+              win={win}
+              loss={loss}
+              sound={sound}
+            />}
+            <div className="d-flex">
+              <button onClick={handleRestart} className="btn restart"><img src={RestartIMG} /></button>
+              <SoundController sound={sound} setSound={setSound} />
+            </div>
           </div>
         </div>
       </div>
-      <a href="https://www.linkedin.com/in/blondy-martinez/" target="_blank" className="fixed-bottom p-4 text-center footer">By Blondy Martinez</a>
+      <a href="https://www.linkedin.com/in/blondy-martinez/" target="_blank" className="p-4 text-center footer">By Blondy Martinez</a>
     </div>
   );
 }
