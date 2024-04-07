@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/js-hangman/static/css/main.35cc178e.css",
-    "main.js": "/js-hangman/static/js/main.8c900299.js",
+    "main.js": "/js-hangman/static/js/main.6c87f58e.js",
     "static/media/6_Blackboard texture-seamless.jpg": "/js-hangman/static/media/6_Blackboard texture-seamless.e6fb1dd7c2f578282bd6.jpg",
     "static/media/RightChalk.ttf": "/js-hangman/static/media/RightChalk.3ad750da8af5fe440e8f.ttf",
     "static/media/sound_on.png": "/js-hangman/static/media/sound_on.6101c2e5f38a368004dc.png",
@@ -23,10 +23,10 @@
     "static/media/chalk.mp3": "/js-hangman/static/media/chalk.1e95a64ba8b271592326.mp3",
     "index.html": "/js-hangman/index.html",
     "main.35cc178e.css.map": "/js-hangman/static/css/main.35cc178e.css.map",
-    "main.8c900299.js.map": "/js-hangman/static/js/main.8c900299.js.map"
+    "main.6c87f58e.js.map": "/js-hangman/static/js/main.6c87f58e.js.map"
   },
   "entrypoints": [
     "static/css/main.35cc178e.css",
-    "static/js/main.8c900299.js"
+    "static/js/main.6c87f58e.js"
   ]
 }
