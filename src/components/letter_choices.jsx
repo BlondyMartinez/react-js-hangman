@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import WrongImg from "../assets/wrong.png"
 import CorrectImg from "../assets/correct.png"
 
@@ -11,9 +11,7 @@ const LetterChoices = (props) => {
         stage,
         setStage,
         win,
-        setWin,
-        loss,
-        setLoss } = props;
+        loss, } = props;
 
     function handleClick(letter) {
         if (word.containsLetter(letter)) {
@@ -23,21 +21,7 @@ const LetterChoices = (props) => {
             setLetterFeedback((prevSrc) => ({ ...prevSrc, [letter]: WrongImg }));
             setStage(stage + 1);
         }
-
-        checkForWin();
     }
-
-    function checkForWin() {
-        if (word.isGuessCorrect(word.display(correctLetters))) setWin(true);
-    }
-
-    function checkForLoss() {
-        if (stage == 6) setLoss(true);
-    }
-
-    useEffect(() => {
-        checkForLoss();
-    }, [stage]); 
 
     const LETTERS = [
         ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
