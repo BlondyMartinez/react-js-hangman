@@ -29,8 +29,9 @@ class SecretWord {
         return this.randomWord.includes(letter);
     }
 
-    is(word) {
-        return word == this.randomWord;
+    isGuessCorrect(correctLetters) {
+        const guess = this.display(correctLetters);
+        return guess.toString() == this.randomWord;
     }
 
     display(correctLetters) {
