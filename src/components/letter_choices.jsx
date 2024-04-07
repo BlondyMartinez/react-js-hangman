@@ -1,6 +1,8 @@
 import React from "react";
+import { Howl, Howler } from 'howler';
 import WrongImg from "../assets/wrong.png"
 import CorrectImg from "../assets/correct.png"
+import ChalkSound from "../assets/sound/chalk2.mp3"
 
 const LetterChoices = (props) => {
     const { word,
@@ -15,13 +17,27 @@ const LetterChoices = (props) => {
 
     function handleClick(letter) {
         if (word.containsLetter(letter)) {
-            setCorrectLetters([...correctLetters, letter]);
-            setLetterFeedback((prevSrc) => ({ ...prevSrc, [letter]: CorrectImg }));
+            playSound(() => {
+                setCorrectLetters([...correctLetters, letter]);
+                setLetterFeedback((prevSrc) => ({ ...prevSrc, [letter]: CorrectImg }));
+            });
         } else {
             setLetterFeedback((prevSrc) => ({ ...prevSrc, [letter]: WrongImg }));
             setStage(stage + 1);
         }
     }
+
+    function playSound(callback) {
+        const sound = new Howl({
+            src: [ChalkSound],
+            onend: () => {
+                if (callback) {
+                    callback();
+                }
+            }
+        });
+        sound.play();
+    };
 
     const LETTERS = [
         ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
