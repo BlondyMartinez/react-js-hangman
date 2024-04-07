@@ -17,7 +17,7 @@ const LetterChoices = (props) => {
         sound, } = props;
 
     function handleClick(letter) {
-        if (word.containsLetter(letter)) sound == "on" ? playSound(() => { correctLetter(letter) }) : correctLetter(letter);
+        if (word.containsLetter(letter)) sound === "on" ? playSound(() => { correctLetter(letter) }) : correctLetter(letter);
         else wrongLetter(letter);
     }
 
@@ -62,7 +62,7 @@ const LetterChoices = (props) => {
                             >
                             {letter.toUpperCase()}
                             </button>
-                            {letterFeedback[letter] && <img className="position-absolute top-50 start-50 translate-middle" src={letterFeedback[letter]} />} 
+                            {letterFeedback[letter] && <img className="position-absolute top-50 start-50 translate-middle" src={letterFeedback[letter]} alt={letter} />} 
                         </div>
                     ))}
                 </div>

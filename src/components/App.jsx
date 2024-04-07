@@ -51,14 +51,14 @@ function App() {
   function checkForWin() {
     if (word && word.isGuessCorrect(word.display(correctLetters))) {
       setWin(true);
-      if(sound == "on") winSound.play();
+      if(sound === "on") winSound.play();
     }
   }
 
   function checkForLoss() {
-    if (stage == 6) {
+    if (stage === 6) {
       setLoss(true);
-      if(sound == "on") lossSound.play();
+      if(sound === "on") lossSound.play();
     }
   }
 
@@ -66,12 +66,14 @@ function App() {
     initializeWord();
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-      checkForLoss();
+    checkForLoss();
   }, [stage]); 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-      checkForWin();
+    checkForWin();
   }, [correctLetters]); 
 
   function handleRestart(){
@@ -95,7 +97,7 @@ function App() {
       {win && <ConfettiExplosion force={0.8} duration={3000} particleCount={250} width={1600} />}
       <div className="container-fluid">
         <div className="row d-flex justify-content-center">
-          <div className="col-lg-4 col-md-10 col-sm-10 d-flex justify-content-center align-items-center"><img className="stage" src={STAGE[stage]} /></div>
+          <div className="col-lg-4 col-md-10 col-sm-10 d-flex justify-content-center align-items-center"><img className="stage" src={STAGE[stage]} alt=""/></div>
           <div className="col-lg-4 col-md-10 col-sm-10 d-flex flex-column gap-3 justify-content-around align-items-center">
             {word && <Word word={word.display(correctLetters)} />}
             {word && <LetterChoices 
@@ -117,7 +119,7 @@ function App() {
           </div>
         </div>
       </div>
-      <a href="https://www.linkedin.com/in/blondy-martinez/" target="_blank" className="p-4 text-center footer">By Blondy Martinez</a>
+      <a href="https://www.linkedin.com/in/blondy-martinez/" rel="noreferrer" target="_blank" className="p-4 text-center footer">By Blondy Martinez</a>
     </div>
   );
 }

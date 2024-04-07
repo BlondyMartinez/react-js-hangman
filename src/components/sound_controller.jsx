@@ -4,11 +4,11 @@ import OffImg from "../assets/sound_off.png";
 
 const SoundController = (props) => {
     function handleClick() {
-        props.setSound(props.sound == 'on' ? 'off' : 'on');
+        props.setSound(props.sound === 'on' ? 'off' : 'on');
     }
 
     return (
-        <button className="btn sound" onClick={handleClick}><img src={props.sound == 'on' ? OnImg : OffImg} /></button>
+        <button className="btn sound" onClick={handleClick}><img src={props.sound === 'on' ? OnImg : OffImg} alt={`sound ${sound}`} /></button>
     );
 }
 

@@ -31,7 +31,7 @@ class SecretWord {
 
     isGuessCorrect(correctLetters) {
         const guess = this.display(correctLetters).join('');
-        return guess == this.randomWord;
+        return guess === this.randomWord;
     }
 
     display(correctLetters) {
