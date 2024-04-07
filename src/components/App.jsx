@@ -66,15 +66,13 @@ function App() {
     initializeWord();
   }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     checkForLoss();
-  }, [stage]); 
+  }, [checkForLoss, stage]); 
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     checkForWin();
-  }, [correctLetters]); 
+  }, [checkForWin, correctLetters]); 
 
   function handleRestart(){
     initializeWord();
@@ -113,7 +111,7 @@ function App() {
               sound={sound}
             />}
             <div className="d-flex">
-              <button onClick={handleRestart} className="btn restart"><img src={RestartIMG} /></button>
+              <button onClick={handleRestart} className="btn restart"><img src={RestartIMG} alt="restart" /></button>
               <SoundController sound={sound} setSound={setSound} />
             </div>
           </div>
