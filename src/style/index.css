@@ -76,3 +76,13 @@ h1 {
   font-family: Chalkiez;
   font-size: 2rem;
 }
+
+.restart {
+  background: none;
+  border: none;
+
+  & img {
+    width: 4vw;
+    height: 4vw;
+  }
+}
