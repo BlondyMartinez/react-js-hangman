@@ -8,7 +8,7 @@ const SoundController = (props) => {
     }
 
     return (
-        <button className="btn sound" onClick={handleClick}><img src={props.sound === 'on' ? OnImg : OffImg} alt={`sound ${sound}`} /></button>
+        <button className="btn sound" onClick={handleClick}><img src={props.sound === 'on' ? OnImg : OffImg} alt={`sound ${props.sound}`} /></button>
     );
 }
 
