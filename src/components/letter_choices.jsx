@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import WrongImg from "../assets/wrong.png"
 import CorrectImg from "../assets/correct.png"
 
@@ -25,7 +25,6 @@ const LetterChoices = (props) => {
         }
 
         checkForWin();
-        checkForLoss();
     }
 
     function checkForWin() {
@@ -35,6 +34,10 @@ const LetterChoices = (props) => {
     function checkForLoss() {
         if (stage == 6) setLoss(true);
     }
+
+    useEffect(() => {
+        checkForLoss();
+    }, [stage]); 
 
     const LETTERS = [
         ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
