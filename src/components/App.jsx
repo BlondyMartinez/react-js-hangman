@@ -71,6 +71,7 @@ function App() {
           />}
         </div>
       </div>
+      <a href="https://www.linkedin.com/in/blondy-martinez/" target="_blank" className="fixed-bottom p-4 text-center footer">By Blondy Martinez</a>
     </div>
   );
 }

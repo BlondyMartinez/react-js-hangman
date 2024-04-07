@@ -18,6 +18,11 @@ body {
   color: white;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 h1 {
   font-size: 7rem;
   font-family: RightChalk;
@@ -64,5 +69,10 @@ h1 {
 
 .stage {
   aspect-ratio: 1/1;
-  height: 70vh;
+  height: 60vh;
+}
+
+.footer {
+  font-family: Chalkiez;
+  font-size: 2rem;
 }
