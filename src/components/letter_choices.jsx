@@ -3,16 +3,25 @@ import WrongImg from "../assets/wrong.png"
 import CorrectImg from "../assets/correct.png"
 
 const LetterChoices = (props) => {
-    const [imgSRC, setImgSRC] = useState({});
-
     function handleClick(letter) {
         if (props.word.containsLetter(letter)) {
             props.setCorrectLetters([...props.correctLetters, letter]);
-            setImgSRC((prevSrc) => ({ ...prevSrc, [letter]: CorrectImg }));
+            props.setLetterFeedback((prevSrc) => ({ ...prevSrc, [letter]: CorrectImg }));
         } else {
-            setImgSRC((prevSrc) => ({ ...prevSrc, [letter]: WrongImg }));
+            props.setLetterFeedback((prevSrc) => ({ ...prevSrc, [letter]: WrongImg }));
             props.setStage(props.stage + 1);
         }
+
+        checkForWin();
+        checkForLoss();
+    }
+
+    function checkForWin() {
+        if (props.word.isGuessCorrect(word.display(correctLetters))) props.setWin(true);
+    }
+
+    function checkForLoss() {
+        if (props.stage == 6) props.setLoss(true);
     }
 
     const LETTERS = [
@@ -30,10 +39,11 @@ const LetterChoices = (props) => {
                             <button
                                 onClick={() => handleClick(letter)}
                                 style={{ position: "relative", zIndex: 0 }}
+                                disabled={props.letterFeedback[letter] || props.loss || props.win ? true : false}
                             >
                             {letter.toUpperCase()}
                             </button>
-                            {imgSRC[letter] && <img className="position-absolute top-50 start-50 translate-middle" src={imgSRC[letter]} />} 
+                            {props.letterFeedback[letter] && <img className="position-absolute top-50 start-50 translate-middle" src={props.letterFeedback[letter]} />} 
                         </div>
                     ))}
                 </div>
