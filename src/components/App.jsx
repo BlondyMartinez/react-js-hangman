@@ -66,13 +66,15 @@ function App() {
     initializeWord();
   }, []);
 
+  // eslint-disable-next-line
   useEffect(() => {
     checkForLoss();
-  }, [checkForLoss, stage]); 
+  }, [stage]); 
 
+  // eslint-disable-next-line
   useEffect(() => {
     checkForWin();
-  }, [checkForWin, correctLetters]); 
+  }, [correctLetters]); 
 
   function handleRestart(){
     initializeWord();
@@ -117,7 +119,7 @@ function App() {
           </div>
         </div>
       </div>
-      <a href="https://www.linkedin.com/in/blondy-martinez/" rel="noreferrer" target="_blank" className="p-4 text-center footer">By Blondy Martinez</a>
+      <a href="https://www.linkedin.com/in/blondy-martinez/" rel="noreferrer" target="_blank" className="p-2 text-center footer">By Blondy Martinez</a>
     </div>
   );
 }

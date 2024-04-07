@@ -2,7 +2,7 @@
   "name": "js-hangman",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://BlondyMartinez.github.io/js-hangman",
+  "homepage": "https://blondymartinez.github.io/react-js-hangman/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
